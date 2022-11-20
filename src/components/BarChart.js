@@ -34,7 +34,7 @@ class BarChart extends Component {
                   'rgba(54,162,235,0.6)',
                   'rgba(255,206,86,0.6)',
                  'rgba(75,192,192,0.6)',
-              'rgba(153,102,255,0.6)',
+                'rgba(153,102,255,0.6)',
               'rgba(255,159,64,0.6)',
               'rgba(255,99,132,0.6)'
             ]
@@ -44,13 +44,28 @@ class BarChart extends Component {
     }
   }
 
+static defaultProps = {
+    displayTitle: true,
+    displayLegend:true,
+    LegendPosition:'right'
+}
+
   render() {
     return (
       <div className="BarChart">
         <Bar
           data={this.state.chartData}
           options={{
-          
+            title:{
+                display:this.props.displayTitle,
+                text:'Largest cities in The country',
+                fontSize:25,
+
+            },
+            legend:{
+                display:this.props.displayLegend,
+                position:this.props.LegendPosition
+            }
           }}
         />
       </div>
