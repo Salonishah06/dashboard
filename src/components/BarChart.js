@@ -35,6 +35,34 @@ class BarChart extends Component {
             },
           }}
         />
+        <Line
+          data={this.state.chartData}
+          options={{
+            title: {
+              display: this.props.displayTitle,
+              text: "Largest cities in The country",
+              fontSize: 25,
+            },
+            legend: {
+              display: this.props.displayLegend,
+              position: this.props.LegendPosition,
+            },
+          }}
+        />
+        <Pie
+          data={this.state.chartData}
+          options={{
+            title: {
+              display: this.props.displayTitle,
+              text: "Largest cities in The country",
+              fontSize: 25,
+            },
+            legend: {
+              display: this.props.displayLegend,
+              position: this.props.LegendPosition,
+            },
+          }}
+        />
       </div>
     );
   }
